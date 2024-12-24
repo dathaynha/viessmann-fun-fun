@@ -28,7 +28,7 @@ export const SparklesCore = ({
     const newParticles = Array.from({ length: particleCount }).map(() => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: minSize + Math.random() * (maxSize - minSize),
+      size: (minSize || 1) + Math.random() * ((maxSize || 3) - (minSize || 1)),
     }));
     setParticles(newParticles);
   }, [minSize, maxSize, particleDensity]);
